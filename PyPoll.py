@@ -54,6 +54,8 @@ with open(file_to_load) as election_data:
     
     # Save results to text file.
     with open(file_to_save, "w") as txt_file:
+    # Determine the percentage of votes for each candidate by looping through the counts.
+    # Iterate through the candidate list.
         #Print the final vote count to the terminal. 
         election_results = (
             f"\nElection Results\n"
@@ -64,20 +66,17 @@ with open(file_to_load) as election_data:
         # Save the final vote count to the text file.
         txt_file.write(election_results)
         
-    # Determine the percentage of votes for each candidate by looping through the counts.
-    # Iterate through the candidate list.
-    for candidate_name in candidate_votes:
-        # Retrieve vote count of a candidate.
-        votes = candidate_votes[candidate_name]
-        # Calculate the percentage of votes.
-        vote_percentage = float(votes) / float(total_votes) * 100
-        
-        # Print out each candidate's name, vote count, and percentage of votes to the terminal.
-        candidate_results = (f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
-        # Print each candidate, their voter count, and percentage to the terminal.
-        print(candidate_results)
-        with open(file_to_save, "w") as txt_file:
-            # Save the candidate results to our text file.
+        for candidate_name in candidate_votes:
+            # Retrieve vote count of a candidate.
+            votes = candidate_votes[candidate_name]
+            # Calculate the percentage of votes.
+            vote_percentage = float(votes) / float(total_votes) * 100
+            # with open(file_to_save, "w") as txt_file:
+            # Print out each candidate's name, vote count, and percentage of votes to the terminal.
+            candidate_results = (f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+            # Print each candidate, their voter count, and percentage to the terminal.
+            print(candidate_results)
+            # Save the candidate results to our text file.with open(file_to_save, "w") as txt_file:
             txt_file.write(candidate_results)
 
 # Close the file.
