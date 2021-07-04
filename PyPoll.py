@@ -1,9 +1,3 @@
-# Output 1 = Total # of votes cast
-# Output 2 = List of candidates that received votes
-# Output 3 = # of votes per candidate
-# Output 4 = % of votes per candidate
-# Output 5 = Declared winner
-
 # Add dependencies
 import csv
 import os
@@ -71,7 +65,6 @@ with open(file_to_load) as election_data:
             votes = candidate_votes[candidate_name]
             # Calculate the percentage of votes.
             vote_percentage = float(votes) / float(total_votes) * 100
-            # with open(file_to_save, "w") as txt_file:
             # Print out each candidate's name, vote count, and percentage of votes to the terminal.
             candidate_results = (f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
             # Print each candidate, their voter count, and percentage to the terminal.
@@ -79,39 +72,23 @@ with open(file_to_load) as election_data:
             # Save the candidate results to our text file.with open(file_to_save, "w") as txt_file:
             txt_file.write(candidate_results)
 
+            # Determine winning vote count and candidate
+            # Determine if the votes are greater than the winning count.
+            if (votes > winning_count) and (vote_percentage > winning_percentage):
+                # If true then set winning_count = votes and winning_percent = vote_percentage.
+                winning_count = votes
+                winning_percentage = vote_percentage
+                # Set the winning_candidate equal to the candidate's name.
+                winning_candidate = candidate_name
+
+        winning_candidate_summary = (
+            f"-------------------------\n"
+            f"Winner: {winning_candidate}\n"
+            f"Winning Vote Count: {winning_count:,}\n"
+            f"Winning Percentage: {winning_percentage:.1f}%\n"
+            f"-------------------------\n")
+        print(winning_candidate_summary)
+        txt_file.write(winning_candidate_summary)
+
 # Close the file.
 election_data.close()
-
-        # Determine winning vote count and candidate
-        # Determine if the votes are greater than the winning count.
-        #if (votes > winning_count) and (vote_percentage > winning_percentage):
-            # If true then set winning_count = votes and winning_percent =
-            # vote_percentage.
-        #   winning_count = votes
-        #   winning_percentage = vote_percentage
-            # Set the winning_candidate equal to the candidate's name.
-        #   winning_candidate = candidate_name
-
-    #winning_candidate_summary = (
-    #    f"-------------------------\n"
-    #    f"Winner: {winning_candidate}\n"
-    #    f"Winning Vote Count: {winning_count:,}\n"
-    #    f"Winning Percentage: {winning_percentage:.1f}%\n"
-    #    f"-------------------------\n")
-    
-    #print(winning_candidate_summary)
-
-# Write some data to the file.
-# outfile.write("Hello World, It's me!")
-
-# Using the with statement open the file as a text file.
-#with open(file_to_save, "w") as txt_file:
-
-    # Write some data to the file.
- #    txt_file.write("Counties in the Election\n------------------------\n")
-    # Write three counties to the file.
- #    txt_file.write("Arapahoe\nDenver\nJefferson")
-    
-# Close the file
-# outfile.close()
-
