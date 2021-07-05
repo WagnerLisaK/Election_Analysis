@@ -42,7 +42,7 @@ For Food/Restaurant voting ...
  1. Replace the **Candidate-referencing** variables with **specific restaurant name** variables.
  2. Replace the **County-referencing** variables with **Category Choice** variables, such as "Best Outdoor Dining", "Best Indoor Dining", "Best Take-out".
 
-Then ***throughout the entire code***, replace the "old" variables with the "new" variables a shown in the example below:
+Then ***throughout the entire code***, replace the "old" variables with the "new" variables a shown in the ***example*** below:
 
 ![CodeChanges.png](https://github.com/WagnerLisaK/Election_Analysis/blob/main/Resources/CodeChanges.png)
 
