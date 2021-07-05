@@ -51,5 +51,16 @@ The following are the assumptions:
     - The results are formatted the same as the existing data in the file (same columns, etc)
  2. There is an "Analysis" folder containing the "election_analysis.txt" file which will contain the analysis.
 
+**********************************************************************
+CHALLENGE  SUBMISSION  NOTES:
 
-Submitted by Lisa K Wagner (07/04/2021)
+Below is a screen shot of the terminal output:
+
+![Terminal_Output.png](https://github.com/WagnerLisaK/Election_Analysis/blob/main/Resources/Terminal_Output.png)
+
+Below is a screen shot of the txt_file output:
+
+![Write_Output.png](https://github.com/WagnerLisaK/Election_Analysis/blob/main/Resources/Write_Output.png)
+
+
+Submitted by Lisa K Wagner (07/05/2021)
